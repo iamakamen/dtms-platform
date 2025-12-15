@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dtms-exporter
+  namespace: iamakamen-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dtms-exporter
+  template:
+    metadata:
+      labels:
+        app: dtms-exporter
+    spec:
+      containers:
+        - name: exporter
+          image: ghcr.io/iamakamen/dtms-app:latest
+          imagePullPolicy: Always
+          command: ["python", "-m", "exporter.exporter"]
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: dtms-data
+              mountPath: /app/data
+      volumes:
+        - name: dtms-data
+          persistentVolumeClaim:
+            claimName: dtms-data

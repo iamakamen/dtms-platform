@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exporter-site-c
+  labels:
+    app: exporter-site-c
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: exporter-site-c
+  template:
+    metadata:
+      labels:
+        app: exporter-site-c
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret
+      containers:
+        - name: exporter
+          image: ghcr.io/iamakamen/dtms-sys:v1
+          command: ["python", "-m", "exporter.exporter"]
+          env:
+            - name: SITE_NAME
+              value: "SITE_C"
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "200m"
+              memory: "256Mi"
+          volumeMounts:
+            - name: dtms-data
+              mountPath: /app/data
+      volumes:
+        - name: dtms-data
+          persistentVolumeClaim:
+            claimName: dtms-data

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dtms-api
+  labels:
+    app: dtms-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dtms-api
+  template:
+    metadata:
+      labels:
+        app: dtms-api
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret
+      containers:
+        - name: api
+          image: ghcr.io/iamakamen/dtms-sys:v1
+          imagePullPolicy: Always
+          command: ["python", "-u", "-m", "uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8003"]
+          env:
+            - name: PYTHONUNBUFFERED
+              value: "1"
+          ports:
+            - containerPort: 8003
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          volumeMounts:
+            - name: dtms-data
+              mountPath: /app/data
+      volumes:
+        - name: dtms-data
+          persistentVolumeClaim:
+            claimName: dtms-data

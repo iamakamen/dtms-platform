@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anomaly
+  labels:
+    app: anomaly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anomaly
+  template:
+    metadata:
+      labels:
+        app: anomaly
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret
+      containers:
+        - name: anomaly-exporter
+          image: ghcr.io/iamakamen/dtms-sys:v1
+          imagePullPolicy: Always
+          command: ["python", "-m", "anomaly.anomaly_exporter"]
+          ports:
+            - containerPort: 8001
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "512Mi"
+            limits:
+              cpu: "1000m"
+              memory: "1024Mi"
+          volumeMounts:
+            - name: dtms-data
+              mountPath: /app/data
+      volumes:
+        - name: dtms-data
+          persistentVolumeClaim:
+            claimName: dtms-data

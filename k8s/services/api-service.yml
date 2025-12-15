@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dtms-api
+  labels:
+    app: dtms-api
+spec:
+  selector:
+    app: dtms-api
+  ports:
+    - name: http
+      port: 8003
+      targetPort: 8003
+  type: ClusterIP
