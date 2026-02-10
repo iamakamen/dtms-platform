@@ -1,4 +1,4 @@
-# 📦 DTMS Platform
+# DTMS Platform
 ### Distributed Transfer Monitoring System – OpenShift Deployment
 
 [![OpenShift](https://img.shields.io/badge/OpenShift-Ready-red?logo=redhat)](https://www.openshift.com/)
