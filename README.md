@@ -7,7 +7,7 @@
 [![Go](https://img.shields.io/badge/Go-1.19+-00ADD8?logo=go&logoColor=white)](https://golang.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## 📋 Table of Contents
+## Table of Contents
 - [Overview](#-overview)
 - [Architecture](#-architecture)
 - [Core Features](#-core-features)
@@ -20,7 +20,7 @@
 - [Contributing](#-contributing)
 - [License](#-license)
 
-## 🎯 Overview
+## Overview
 
 **DTMS Platform** is an OpenShift-based distributed monitoring system designed to simulate and monitor multi-site data transfers across heterogeneous infrastructure.
 
@@ -39,7 +39,9 @@ This project demonstrates modern cloud-native patterns including distributed mon
 - 🐳 **Containerized deployment** on OpenShift
 - ⚡ **Resource-optimized** for strict **3 vCPU quota** environments
 
-## 🏗️ Architecture
+---
+
+## Architecture
 
 The system follows a distributed producer-consumer pattern with centralized observability and batch analytics.
 ```mermaid
@@ -79,7 +81,9 @@ graph TD
 5. **Go Service** validates data freshness in real-time
 6. **CronJob** runs periodic correlation analytics
 
-## ✨ Core Features
+---
+
+## Core Features
 
 ### 🔹 Multi-Site Monitoring
 
@@ -134,7 +138,9 @@ Engineered for sandbox and edge environments:
 - **Storage Efficient**: Shared RWX PVC strategy
 - **Cost-Effective**: Suitable for free-tier clusters
 
-## 🛠️ Technology Stack
+---
+
+## Technology Stack
 
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
@@ -148,7 +154,9 @@ Engineered for sandbox and edge environments:
 | **Storage** | PVC (RWX) | Shared persistent volume |
 | **ML** | scikit-learn | Isolation Forest model |
 
-## 🚀 Getting Started
+---
+
+## Getting Started
 
 ### Prerequisites
 
@@ -195,28 +203,9 @@ open $(oc get route grafana -o jsonpath='{.spec.host}')
 # Access API Documentation
 open $(oc get route dtms-api -o jsonpath='{.spec.host}')/docs
 ```
+---
 
-## 📁 Project Structure
-```
-dtms-platform/
-├── exporter/          # Site-based transfer exporters (A, B, C)
-├── anomaly/           # Isolation Forest detection logic
-├── api/               # FastAPI REST interface
-├── freshness/         # Go freshness validation service
-├── streaming/         # Kafka producer & Spark consumer
-├── tools/             # Correlation analytics worker
-├── k8s/               # Kubernetes/OpenShift manifests
-│   ├── deployments/   # Service deployments
-│   ├── services/      # Service definitions
-│   ├── routes/        # External routes
-│   ├── cronjobs/      # Batch jobs
-│   ├── config/        # ConfigMaps & Secrets
-│   └── storage/       # PVC definitions
-├── dashboards/        # Grafana dashboard JSON
-└── docs/              # Additional documentation
-```
-
-## 🤔 Design Decisions
+## Design Decisions
 
 ### Why Go for Freshness?
 
@@ -239,7 +228,9 @@ dtms-platform/
 - **Sandbox Friendly**: Works in constrained environments
 - **Cost Effective**: No egress charges
 
-## ⚠️ Limitations
+---
+
+## Limitations
 
 - **Sandbox Optimized**: Tuned for development clusters, not production-scale
 - **Kafka Configuration**: Single broker, limited Zookeeper resources
@@ -247,7 +238,9 @@ dtms-platform/
 - **Scaling**: Not currently configured for horizontal pod autoscaling
 - **Persistence**: Limited retention policies for demo purposes
 
-## 🔮 Future Roadmap
+---
+
+## Future Roadmap
 
 - [ ] Horizontal scaling with ReplicaSets
 - [ ] PushGateway integration for correlation metrics
@@ -260,35 +253,15 @@ dtms-platform/
 - [ ] Advanced ML models (LSTM, Prophet)
 - [ ] Cost optimization metrics
 
-## 📸 Screenshots
+---
 
-### Architecture Overview
-*Coming soon*
-
-### Grafana Transfer Dashboard
-*Coming soon*
-
-### Anomaly Detection Metrics
-*Coming soon*
-
-### FastAPI Swagger UI
-*Coming soon*
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+---
+
+## Acknowledgments
 
 - Inspired by real-world distributed monitoring challenges
 - Built with modern cloud-native best practices
