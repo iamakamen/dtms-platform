@@ -26,16 +26,16 @@ The platform demonstrates multi-site monitoring, streaming analytics, anomaly de
 
 ### Key Capabilities
 
-- 🌐 **Multi-site transfer exporters** (SITE_A, SITE_B, SITE_C)
-- 📊 **Real-time metric collection** with Prometheus
-- 📈 **Visualization** with Grafana dashboards
-- 🤖 **Anomaly detection** using Isolation Forest ML
-- 🚀 **Streaming pipeline** with Kafka + Spark
-- 🔌 **REST API** powered by FastAPI
-- ✅ **Data freshness validation** (Go microservice)
-- 📉 **Correlation analytics** via Kubernetes CronJobs
-- 🐳 **Containerized deployment** on OpenShift
-- ⚡ **Resource-optimized** for strict **3 vCPU quota** environments
+- **Multi-site transfer exporters** (SITE_A, SITE_B, SITE_C)
+- **Real-time metric collection** with Prometheus
+- **Visualization** with Grafana dashboards
+- **Anomaly detection** using Isolation Forest ML
+- **Streaming pipeline** with Kafka + Spark
+- **REST API** powered by FastAPI
+- **Data freshness validation** (Go microservice)
+- **Correlation analytics** via Kubernetes CronJobs
+- **Containerized deployment** on OpenShift
+- **Resource-optimized** for strict **3 vCPU quota** environments
 
 ---
 
