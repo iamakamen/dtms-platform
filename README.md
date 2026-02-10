@@ -8,15 +8,15 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ## Table of Contents
-- [Overview](#-overview)
-- [Architecture](#-architecture)
-- [Core Features](#-core-features)
-- [Technology Stack](#-technology-stack)
-- [Getting Started](#-getting-started)
-- [Project Structure](#-project-structure)
-- [Design Decisions](#-design-decisions)
-- [Limitations](#-limitations)
-- [Future Roadmap](#-future-roadmap)
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Core Features](#core-features)
+- [Technology Stack](#technology-stack)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Design Decisions](#design-decisions)
+- [Limitations](#limitations)
+- [Future Roadmap](#future-roadmap)
 - [License](#license)
 
 ## Overview
