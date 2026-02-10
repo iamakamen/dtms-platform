@@ -22,7 +22,7 @@
 
 **DTMS Platform** is an OpenShift-based distributed monitoring system designed to simulate and monitor multi-site data transfers across heterogeneous infrastructure.
 
-This project demonstrates modern cloud-native patterns including distributed monitoring, observability, and reliability engineering in resource-constrained cluster environments.
+The platform demonstrates multi-site monitoring, streaming analytics, anomaly detection, and Kubernetes-native deployment under strict resource constraints.
 
 ### Key Capabilities
 
@@ -107,10 +107,7 @@ Implements **Isolation Forest** machine learning model:
 ### 🔹 Streaming Pipeline
 
 Built on **Kafka + Spark Streaming**:
-- High-throughput event processing
-- Per-batch aggregation
-- Real-time metric exposure
-- Fault-tolerant architecture
+- Kafka producer → Spark Streaming consumer → per-batch aggregation exposed as Prometheus metrics.
 
 ### 🔹 Data Freshness Service
 
@@ -240,31 +237,14 @@ open $(oc get route dtms-api -o jsonpath='{.spec.host}')/docs
 
 ## Future Roadmap
 
-- [ ] Horizontal scaling with ReplicaSets
-- [ ] PushGateway integration for correlation metrics
-- [ ] Helm Chart packaging
-- [ ] GitLab CI/CD pipeline automation
-- [ ] Alertmanager integration for anomaly thresholds
-- [ ] Synthetic fault injection testing
-- [ ] TLS/mTLS for service mesh
-- [ ] Multi-cluster federation support
-- [ ] Advanced ML models (LSTM, Prophet)
-- [ ] Cost optimization metrics
+- [ ] GitLab CI/CD automation
+- [ ] Alertmanager rules for anomaly thresholds
+- [ ] Helm chart packaging
+- [ ] Resource usage benchmarking
+- [ ] Structured logging and tracing integration
 
 ---
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## Acknowledgments
-
-- Inspired by real-world distributed monitoring challenges
-- Built with modern cloud-native best practices
-- Designed for learning and demonstration purposes
-
----
-
-**Built with ❤️ for the OpenShift and Kubernetes community**
