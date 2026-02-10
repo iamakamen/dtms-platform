@@ -17,7 +17,6 @@
 - [Design Decisions](#-design-decisions)
 - [Limitations](#-limitations)
 - [Future Roadmap](#-future-roadmap)
-- [Contributing](#-contributing)
 - [License](#-license)
 
 ## Overview
