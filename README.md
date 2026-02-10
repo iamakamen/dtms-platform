@@ -13,7 +13,6 @@
 - [Core Features](#core-features)
 - [Technology Stack](#technology-stack)
 - [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
 - [Design Decisions](#design-decisions)
 - [Limitations](#limitations)
 - [Future Roadmap](#future-roadmap)
